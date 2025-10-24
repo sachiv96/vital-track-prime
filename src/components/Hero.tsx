@@ -6,12 +6,14 @@ import heroImage from "@/assets/hero-dashboard.jpg";
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-0">
-      {/* Modern mesh gradient background */}
+      {/* Ultra modern mesh gradient background */}
       <div className="absolute inset-0 bg-background">
-        <div className="absolute inset-0 mesh-gradient" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(217_91%_60%/0.15),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,hsl(0_84%_60%/0.12),transparent_60%)]" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+        <div className="absolute inset-0 mesh-gradient opacity-80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(217_91%_60%/0.18),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,hsl(0_84%_60%/0.15),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,hsl(220_30%_5%/0.2)_50%,transparent_100%)]" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 py-8 md:py-20">
@@ -36,22 +38,23 @@ export const Hero = () => {
               <span className="text-xs md:text-sm font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Launching Soon</span>
             </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">
-              <span className="gradient-text">Transform</span> Your Life,
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight">
+              <span className="gradient-text inline-block">Transform</span> Your Life,
               <br className="hidden sm:block" />
               <span className="block sm:inline"> One Day at a Time</span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground/90 max-w-lg mx-auto lg:mx-0 leading-relaxed">
               The ultimate productivity platform designed for students and achievers. Track time, build habits, and reach your goals with AI-powered insights.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="gap-2 glow-primary group w-full sm:w-auto touch-manipulation active:scale-95 transition-transform">
-                Join Waitlist
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <Button size="lg" className="gap-2 group w-full sm:w-auto touch-manipulation relative overflow-hidden shadow-[0_0_30px_-10px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_-5px_hsl(var(--primary)/0.7)]">
+                <span className="relative z-10">Join Waitlist</span>
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform relative z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
               </Button>
-              <Button size="lg" variant="secondary" className="gap-2 w-full sm:w-auto touch-manipulation active:scale-95 transition-transform">
+              <Button size="lg" variant="secondary" className="gap-2 w-full sm:w-auto touch-manipulation hover:scale-105 transition-all">
                 <Timer className="h-4 w-4" />
                 Watch Demo
               </Button>
@@ -75,35 +78,37 @@ export const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative order-first lg:order-last"
+            className="relative order-first lg:order-last group/hero"
           >
-            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border border-primary/30 glass-card">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+            <div className="relative rounded-3xl md:rounded-[2rem] overflow-hidden glass-card shadow-[0_20px_70px_-20px_hsl(var(--primary)/0.4)] group-hover/hero:shadow-[0_20px_90px_-15px_hsl(var(--primary)/0.6)] transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 opacity-50 group-hover/hero:opacity-70 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
               <img
                 src={heroImage}
-                alt="Productivity Dashboard"
-                className="w-full h-auto relative z-10"
+                alt="Productivity Dashboard - Modern time tracking and habit building interface"
+                className="w-full h-auto relative z-10 transform group-hover/hero:scale-[1.02] transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
             </div>
 
             {/* Floating elements - mobile optimized */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="absolute -top-2 -right-2 md:-top-4 md:-right-4 glass-card p-3 md:p-5 shadow-lg"
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-2 -right-2 md:-top-4 md:-right-4 frosted p-4 md:p-6 rounded-2xl shadow-[0_8px_32px_-8px_hsl(var(--primary)/0.5)] border border-primary/20 hover:border-primary/40 transition-all group/card"
             >
-              <Target className="h-5 w-5 md:h-8 md:w-8 text-primary mb-1 md:mb-2" />
-              <div className="text-xs md:text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Goal Tracking</div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl opacity-0 group-hover/card:opacity-100 transition-opacity" />
+              <Target className="h-5 w-5 md:h-8 md:w-8 text-primary mb-2 relative z-10" />
+              <div className="text-xs md:text-sm font-semibold gradient-text relative z-10">Goal Tracking</div>
             </motion.div>
 
             <motion.div
               animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-              className="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-4 glass-card p-3 md:p-5 shadow-lg"
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-4 frosted p-4 md:p-6 rounded-2xl shadow-[0_8px_32px_-8px_hsl(var(--accent)/0.5)] border border-accent/20 hover:border-accent/40 transition-all group/card"
             >
-              <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">92%</div>
-              <div className="text-xs md:text-sm text-muted-foreground">Daily Streak</div>
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent rounded-2xl opacity-0 group-hover/card:opacity-100 transition-opacity" />
+              <div className="text-xl md:text-3xl font-bold gradient-text relative z-10">92%</div>
+              <div className="text-xs md:text-sm text-muted-foreground/80 relative z-10">Daily Streak</div>
             </motion.div>
           </motion.div>
         </div>

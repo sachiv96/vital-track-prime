@@ -72,8 +72,9 @@ const features = [
 export const Features = () => {
   return (
     <section className="py-12 md:py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/8 rounded-full blur-[120px] animate-pulse-glow" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       
       <div className="container relative z-10 mx-auto px-4">
         <motion.div
@@ -81,12 +82,12 @@ export const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8 md:mb-16"
+          className="text-center mb-8 md:mb-16 space-y-4"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 tracking-tight">
             Everything You Need to <span className="gradient-text">Succeed</span>
           </h2>
-          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
+          <p className="text-base md:text-xl text-muted-foreground/80 max-w-2xl mx-auto px-4 leading-relaxed">
             A complete ecosystem for productivity, health, and personal growth
           </p>
         </motion.div>
@@ -100,14 +101,16 @@ export const Features = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <Card className="h-full glass-card hover:border-primary/40 transition-all duration-300 group hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)] active:scale-95 touch-manipulation">
-                <CardContent className="p-4 md:p-6">
-                  <div className={`${feature.color} mb-3 md:mb-4 p-3 rounded-xl bg-gradient-to-br from-primary/10 to-transparent group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 w-fit`}>
-                    <feature.icon className="h-8 w-8 md:h-10 md:w-10" />
+              <Card className="h-full glass-card hover:scale-[1.02] transition-all duration-500 group overflow-hidden border-0 relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <CardContent className="p-5 md:p-7 relative z-10">
+                  <div className={`${feature.color} mb-4 md:mb-5 p-4 rounded-2xl frosted group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500 w-fit shadow-lg`}>
+                    <feature.icon className="h-7 w-7 md:h-9 md:w-9" />
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold mb-1.5 md:mb-2 group-hover:text-primary transition-colors">{feature.title}</h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{feature.description}</p>
+                  <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 group-hover:gradient-text transition-all">{feature.title}</h3>
+                  <p className="text-sm md:text-base text-muted-foreground/80 leading-relaxed">{feature.description}</p>
                 </CardContent>
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </Card>
             </motion.div>
           ))}

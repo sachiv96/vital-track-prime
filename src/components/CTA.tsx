@@ -21,9 +21,11 @@ export const CTA = () => {
 
   return (
     <section className="py-12 md:py-24 relative overflow-hidden">
-      <div className="absolute inset-0 mesh-gradient" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(217_91%_60%/0.15),transparent_70%)]" />
+      <div className="absolute inset-0 mesh-gradient opacity-70" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(217_91%_60%/0.18),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(0_84%_60%/0.15),transparent_70%)]" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
       <div className="container relative z-10 mx-auto px-4">
         <motion.div
@@ -41,13 +43,13 @@ export const CTA = () => {
             <Sparkles className="h-10 w-10 md:h-12 md:w-12 text-primary" />
           </motion.div>
 
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 tracking-tight leading-tight">
             Ready to Transform
             <br />
             Your <span className="gradient-text">Productivity?</span>
           </h2>
 
-          <p className="text-base md:text-xl text-muted-foreground mb-6 md:mb-8 max-w-2xl mx-auto px-4">
+          <p className="text-base md:text-xl text-muted-foreground/80 mb-6 md:mb-8 max-w-2xl mx-auto px-4 leading-relaxed">
             Join thousands of students and professionals who are already on their journey to success. Limited spots available for early access.
           </p>
 
@@ -57,12 +59,13 @@ export const CTA = () => {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="glass border-primary/30 hover:border-primary/50 focus:border-primary h-11 md:h-12 text-base transition-all"
+              className="frosted border-primary/30 hover:border-primary/50 focus:border-primary h-12 md:h-14 text-base rounded-2xl px-5 transition-all shadow-lg focus:shadow-[0_0_30px_-10px_hsl(var(--primary)/0.5)]"
               required
             />
-            <Button type="submit" size="lg" className="gap-2 glow-primary group w-full touch-manipulation active:scale-95 transition-transform">
-              Get Early Access
-              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            <Button type="submit" size="lg" className="gap-2 group w-full touch-manipulation h-12 md:h-14 shadow-[0_0_30px_-10px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_-5px_hsl(var(--primary)/0.7)] relative overflow-hidden">
+              <span className="relative z-10">Get Early Access</span>
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform relative z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
             </Button>
           </form>
 

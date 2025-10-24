@@ -5,15 +5,15 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl text-sm font-bold ring-offset-background transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-r from-primary to-primary/90 text-primary-foreground hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.5)] hover:scale-105",
+        default: "bg-gradient-to-r from-primary to-primary/90 text-primary-foreground shadow-[0_8px_32px_-8px_hsl(var(--primary)/0.4)] hover:shadow-[0_8px_48px_-8px_hsl(var(--primary)/0.6)] hover:scale-[1.02] active:scale-[0.98]",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background/50 backdrop-blur hover:bg-accent hover:text-accent-foreground",
-        secondary: "glass text-secondary-foreground hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)] hover:scale-105",
-        ghost: "hover:bg-accent/50 hover:text-accent-foreground",
+        outline: "border-2 border-input frosted hover:bg-accent hover:text-accent-foreground hover:border-accent/50",
+        secondary: "glass text-secondary-foreground shadow-[0_8px_32px_-8px_hsl(var(--primary)/0.3)] hover:shadow-[0_8px_48px_-8px_hsl(var(--primary)/0.5)] hover:scale-[1.02] active:scale-[0.98]",
+        ghost: "hover:frosted hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {

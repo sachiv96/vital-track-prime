@@ -33,8 +33,9 @@ export const TargetAudience = () => {
   return (
     <section className="py-12 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-64 md:w-96 h-64 md:h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse-glow" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 md:w-96 h-64 md:h-96 bg-accent/10 rounded-full blur-[120px] animate-pulse-glow" />
+        <div className="absolute top-1/4 left-1/4 w-72 md:w-[500px] h-72 md:h-[500px] bg-primary/12 rounded-full blur-[140px] animate-pulse-glow" />
+        <div className="absolute bottom-1/4 right-1/4 w-72 md:w-[500px] h-72 md:h-[500px] bg-accent/12 rounded-full blur-[140px] animate-pulse-glow" />
+        <div className="absolute inset-0 mesh-gradient opacity-50" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4">
@@ -45,10 +46,10 @@ export const TargetAudience = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 md:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 tracking-tight">
             Built for <span className="gradient-text">Achievers</span>
           </h2>
-          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
+          <p className="text-base md:text-xl text-muted-foreground/80 max-w-2xl mx-auto px-4 leading-relaxed">
             Whether you're preparing for competitive exams or building your career, we've got you covered
           </p>
         </motion.div>
@@ -62,20 +63,22 @@ export const TargetAudience = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <Card className="h-full glass-card hover:border-primary/40 transition-all duration-300 group hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)] text-center active:scale-95 touch-manipulation">
-                <CardContent className="p-5 md:p-6 space-y-3 md:space-y-4">
-                  <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 text-primary group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                    <audience.icon className="h-7 w-7 md:h-8 md:w-8" />
+              <Card className="h-full glass-card hover:scale-[1.03] transition-all duration-500 group text-center border-0 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <CardContent className="p-6 md:p-7 space-y-4 md:space-y-5 relative z-10">
+                  <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl frosted text-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
+                    <audience.icon className="h-8 w-8 md:h-10 md:w-10" />
                   </div>
                   <div>
-                    <h3 className="text-lg md:text-xl font-semibold mb-1.5 md:mb-2">{audience.title}</h3>
-                    <p className="text-muted-foreground text-xs md:text-sm mb-2 md:mb-3">
+                    <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-2.5 group-hover:gradient-text transition-all">{audience.title}</h3>
+                    <p className="text-muted-foreground/80 text-sm md:text-base mb-3 md:mb-4 leading-relaxed">
                       {audience.description}
                     </p>
-                    <div className="text-xs md:text-sm font-semibold text-accent">
+                    <div className="inline-block px-3 py-1.5 rounded-full frosted text-xs md:text-sm font-semibold gradient-text border border-primary/20">
                       {audience.stats}
                     </div>
                   </div>
+                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </CardContent>
               </Card>
             </motion.div>
