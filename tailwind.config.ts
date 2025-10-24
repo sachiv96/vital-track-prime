@@ -101,9 +101,19 @@ export default {
         "pulse-glow": {
           "0%, 100%": {
             opacity: "1",
+            transform: "scale(1)",
           },
           "50%": {
-            opacity: "0.5",
+            opacity: "0.6",
+            transform: "scale(1.05)",
+          },
+        },
+        "shimmer": {
+          "0%": {
+            backgroundPosition: "-200% center",
+          },
+          "100%": {
+            backgroundPosition: "200% center",
           },
         },
       },
@@ -112,7 +122,8 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.6s ease-out",
         "slide-in": "slide-in 0.8s ease-out",
-        "pulse-glow": "pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "pulse-glow": "pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "shimmer": "shimmer 3s linear infinite",
       },
     },
   },

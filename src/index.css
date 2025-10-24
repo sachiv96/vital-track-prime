@@ -36,13 +36,21 @@ All colors MUST be HSL.
     --input: 220 20% 18%;
     --ring: 217 91% 60%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 45%));
-    --gradient-dark: linear-gradient(180deg, hsl(220 30% 5%), hsl(220 25% 8%));
-    --gradient-accent: linear-gradient(135deg, hsl(0 84% 60%), hsl(10 84% 50%));
-    --glow-primary: 0 0 40px hsl(217 91% 60% / 0.3);
-    --glow-accent: 0 0 40px hsl(0 84% 60% / 0.3);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(220 91% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(0 84% 60%), hsl(15 90% 55%));
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(217 91% 60% / 0.15) 0px, transparent 50%),
+                     radial-gradient(at 80% 0%, hsl(0 84% 60% / 0.15) 0px, transparent 50%),
+                     radial-gradient(at 0% 50%, hsl(217 91% 60% / 0.1) 0px, transparent 50%);
+    --gradient-glass: linear-gradient(135deg, hsl(220 25% 12% / 0.7), hsl(220 20% 10% / 0.5));
+    
+    --glow-primary: 0 0 60px hsl(217 91% 60% / 0.4), 0 0 100px hsl(217 91% 60% / 0.1);
+    --glow-accent: 0 0 60px hsl(0 84% 60% / 0.4), 0 0 100px hsl(0 84% 60% / 0.1);
+    --glow-soft: 0 8px 32px hsl(217 91% 60% / 0.15);
+    
+    --shadow-soft: 0 4px 24px -2px hsl(220 30% 5% / 0.3);
+    --shadow-strong: 0 20px 60px -10px hsl(220 30% 5% / 0.5);
 
     --sidebar-background: 220 25% 8%;
     --sidebar-foreground: 210 40% 98%;
@@ -95,7 +103,8 @@ All colors MUST be HSL.
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent;
+    animation: gradient-shift 3s ease infinite;
   }
 
   .glow-primary {
@@ -104,5 +113,38 @@ All colors MUST be HSL.
 
   .glow-accent {
     box-shadow: var(--glow-accent);
+  }
+
+  .glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .mesh-gradient {
+    background: var(--gradient-mesh);
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
 }

@@ -72,7 +72,8 @@ const features = [
 export const Features = () => {
   return (
     <section className="py-12 md:py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/50 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
       
       <div className="container relative z-10 mx-auto px-4">
         <motion.div
@@ -99,13 +100,13 @@ export const Features = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <Card className="h-full bg-card/50 backdrop-blur border-primary/10 hover:border-primary/30 transition-all group hover:glow-primary active:scale-95 touch-manipulation">
+              <Card className="h-full glass-card hover:border-primary/40 transition-all duration-300 group hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)] active:scale-95 touch-manipulation">
                 <CardContent className="p-4 md:p-6">
-                  <div className={`${feature.color} mb-3 md:mb-4 group-hover:scale-110 transition-transform`}>
+                  <div className={`${feature.color} mb-3 md:mb-4 p-3 rounded-xl bg-gradient-to-br from-primary/10 to-transparent group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 w-fit`}>
                     <feature.icon className="h-8 w-8 md:h-10 md:w-10" />
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold mb-1.5 md:mb-2">{feature.title}</h3>
-                  <p className="text-sm md:text-base text-muted-foreground">{feature.description}</p>
+                  <h3 className="text-lg md:text-xl font-semibold mb-1.5 md:mb-2 group-hover:text-primary transition-colors">{feature.title}</h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{feature.description}</p>
                 </CardContent>
               </Card>
             </motion.div>

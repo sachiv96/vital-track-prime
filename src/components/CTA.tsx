@@ -21,8 +21,9 @@ export const CTA = () => {
 
   return (
     <section className="py-12 md:py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-accent/20" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]" />
+      <div className="absolute inset-0 mesh-gradient" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(217_91%_60%/0.15),transparent_70%)]" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
 
       <div className="container relative z-10 mx-auto px-4">
         <motion.div
@@ -56,7 +57,7 @@ export const CTA = () => {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="bg-card/50 border-primary/20 h-11 md:h-12 text-base"
+              className="glass border-primary/30 hover:border-primary/50 focus:border-primary h-11 md:h-12 text-base transition-all"
               required
             />
             <Button type="submit" size="lg" className="gap-2 glow-primary group w-full touch-manipulation active:scale-95 transition-transform">

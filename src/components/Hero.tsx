@@ -6,10 +6,12 @@ import heroImage from "@/assets/hero-dashboard.jpg";
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-0">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(239,68,68,0.1),transparent_50%)]" />
+      {/* Modern mesh gradient background */}
+      <div className="absolute inset-0 bg-background">
+        <div className="absolute inset-0 mesh-gradient" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(217_91%_60%/0.15),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,hsl(0_84%_60%/0.12),transparent_60%)]" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 py-8 md:py-20">
@@ -25,13 +27,13 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-secondary/50 border border-primary/20"
+              className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full glass border border-primary/30"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              <span className="text-xs md:text-sm text-muted-foreground">Launching Soon</span>
+              <span className="text-xs md:text-sm font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Launching Soon</span>
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">
@@ -75,31 +77,32 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative order-first lg:order-last"
           >
-            <div className="relative rounded-xl md:rounded-2xl overflow-hidden border border-primary/20 glow-primary">
+            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border border-primary/30 glass-card">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
               <img
                 src={heroImage}
                 alt="Productivity Dashboard"
-                className="w-full h-auto"
+                className="w-full h-auto relative z-10"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
             </div>
 
             {/* Floating elements - mobile optimized */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-card/90 backdrop-blur border border-primary/20 rounded-lg md:rounded-xl p-2 md:p-4 glow-primary"
+              className="absolute -top-2 -right-2 md:-top-4 md:-right-4 glass-card p-3 md:p-5 shadow-lg"
             >
               <Target className="h-5 w-5 md:h-8 md:w-8 text-primary mb-1 md:mb-2" />
-              <div className="text-xs md:text-sm font-semibold">Goal Tracking</div>
+              <div className="text-xs md:text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Goal Tracking</div>
             </motion.div>
 
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 4, repeat: Infinity }}
-              className="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-4 bg-card/90 backdrop-blur border border-accent/20 rounded-lg md:rounded-xl p-2 md:p-4 glow-accent"
+              className="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-4 glass-card p-3 md:p-5 shadow-lg"
             >
-              <div className="text-xl md:text-2xl font-bold text-accent">92%</div>
+              <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">92%</div>
               <div className="text-xs md:text-sm text-muted-foreground">Daily Streak</div>
             </motion.div>
           </motion.div>

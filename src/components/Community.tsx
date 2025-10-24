@@ -6,6 +6,7 @@ export const Community = () => {
   return (
     <section className="py-12 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       
       <div className="container relative z-10 mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -76,9 +77,9 @@ export const Community = () => {
             transition={{ duration: 0.8 }}
             className="relative mt-8 lg:mt-0"
           >
-            <div className="relative rounded-xl md:rounded-2xl border border-primary/20 bg-card/50 backdrop-blur p-5 md:p-8 glow-primary">
+            <div className="relative glass-card p-5 md:p-8 shadow-[0_0_50px_-12px_hsl(var(--primary)/0.4)]">
               <div className="space-y-4 md:space-y-6">
-                <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-secondary/50 border border-primary/10">
+                <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl glass border border-primary/20 hover:border-primary/40 transition-all">
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/20 flex items-center justify-center text-xl md:text-2xl flex-shrink-0">
                     🔥
                   </div>
@@ -90,7 +91,7 @@ export const Community = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-secondary/50 border border-accent/10">
+                <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl glass border border-accent/20 hover:border-accent/40 transition-all">
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-accent/20 flex items-center justify-center text-xl md:text-2xl flex-shrink-0">
                     ⚡
                   </div>
@@ -102,7 +103,7 @@ export const Community = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-secondary/50 border border-primary/10">
+                <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl glass border border-primary/20 hover:border-primary/40 transition-all">
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/20 flex items-center justify-center text-xl md:text-2xl flex-shrink-0">
                     🎯
                   </div>

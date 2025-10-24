@@ -33,8 +33,8 @@ export const TargetAudience = () => {
   return (
     <section className="py-12 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 md:w-96 h-64 md:h-96 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-64 md:w-96 h-64 md:h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse-glow" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 md:w-96 h-64 md:h-96 bg-accent/10 rounded-full blur-[120px] animate-pulse-glow" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4">
@@ -62,9 +62,9 @@ export const TargetAudience = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <Card className="h-full bg-card/50 backdrop-blur border-primary/10 hover:border-primary/30 transition-all group hover:glow-primary text-center active:scale-95 touch-manipulation">
+              <Card className="h-full glass-card hover:border-primary/40 transition-all duration-300 group hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)] text-center active:scale-95 touch-manipulation">
                 <CardContent className="p-5 md:p-6 space-y-3 md:space-y-4">
-                  <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform">
+                  <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 text-primary group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                     <audience.icon className="h-7 w-7 md:h-8 md:w-8" />
                   </div>
                   <div>
